@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct ViewCart: View {
+struct CartView: View {
     @EnvironmentObject var viewModel: CartViewModel
-
+    @State private var cartItems: [Product] = []
+    
     var body: some View {
         VStack {
             Text("My Cart")
@@ -97,7 +98,7 @@ struct ViewCart: View {
 
 struct ViewCart_Previews: PreviewProvider {
     static var previews: some View {
-        ViewCart()
+        CartView()
             .environmentObject(CartViewModel())
     }
 }
